@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Parcial1_Prog3.Models.Producto>
+
+@{
+    ViewData["Title"] = "Favoritos";
+}
+
+<h1>Productos Favoritos</h1>
+
+@if (!Model.Any())
+{
+        <div class="alert alert-warning">Todavía no hay productos favoritos.
+           
+        </div>
+}
+else
+{
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Marca</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.Precio</td>
+                        <td>@item.Categoria</td>
+                        <td>@item.Marca</td>
+                    </tr>
+            }
+            </tbody>
+        </table>
+}
